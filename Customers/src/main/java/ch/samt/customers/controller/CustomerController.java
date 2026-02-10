@@ -2,8 +2,10 @@ package ch.samt.customers.controller;
 
 import ch.samt.customers.model.Customer;
 
+import jakarta.validation.Valid;
 import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -26,7 +28,10 @@ public class CustomerController {
     }
 
     @PostMapping("/insert")
-    public String saveCustomer(@ModelAttribute Customer customer, Model model) {
+    public String saveCustomer(@ModelAttribute @Valid Customer customer, Model model, Errors errors) {
+        if (errors.hasErrors()){
+            return "insertCustomer";
+        }
         customers.add(customer);
         model.addAttribute("customers", customers);
         return "customerList";

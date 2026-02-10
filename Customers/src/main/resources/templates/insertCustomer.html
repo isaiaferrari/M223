@@ -12,18 +12,34 @@
     <div>
         <label for="id">ID:</label>
         <input type="number" id="id" th:field="*{id}" placeholder="Inserisci ID" required />
+        <span class="validationError"
+              th:if="${#fields.hasErrors('id')}"
+              th:errors="${customer.id}">Id Error
+        </span>
     </div>
     <div>
         <label for="name">Nome:</label>
         <input type="text" id="name" th:field="*{name}" placeholder="Inserisci il nome" required />
+        <span class="validationError"
+              th:if="${#fields.hasErrors('name')}"
+              th:errors="${customer.name}">Name Error
+        </span>
     </div>
     <div>
         <label for="surname">Cognome:</label>
         <input type="text" id="surname" th:field="*{surname}" placeholder="Inserisci il cognome" required />
+        <span class="validationError"
+              th:if="${#fields.hasErrors('surname')}"
+              th:errors="${customer.surname}">Surname Error
+        </span>
     </div>
     <div>
         <label for="age">Età:</label>
         <input type="number" id="age" th:field="*{age}" placeholder="Inserisci l'età" required />
+        <span class="validationError"
+              th:if="${#fields.hasErrors('age')}"
+              th:errors="${customer.age}">Age Error
+        </span>
     </div>
     <div>
         <button type="submit">Salva Cliente</button>
