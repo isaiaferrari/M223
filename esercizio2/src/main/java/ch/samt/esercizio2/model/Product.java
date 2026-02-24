@@ -20,7 +20,7 @@ public class Product {
     private String name;
 
     @Positive(message = "il prezzo deve essere positivo")
-    private double price;
+    private Double price;
 
     @FutureOrPresent(message = "il prodotto non può essere scaduto")
     private LocalDate expirationDate;
