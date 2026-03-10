@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers</title>
+</head>
+<body>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>Expiration</th>
+        <th>CVV</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="customer : ${customers}">
+        <td th:text="${customer.id}"></td>
+        <td th:text="${customer.name}"></td>
+        <td th:text="${customer.surname}"></td>
+        <td th:text="${customer.age}"></td>
+        <td th:text="${customer.city}"></td>
+        <td th:text="${customer.ccExpiration}"></td>
+        <td th:text="${customer.ccCVV}"></td>
+    </tr>
+
+
+    </tbody>
+</table>
+
+</body>
+</html>
