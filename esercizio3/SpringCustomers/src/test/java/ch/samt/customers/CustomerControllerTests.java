@@ -58,7 +58,7 @@ public class CustomerControllerTests {
                 .andExpect(redirectedUrl("/customers"));  // Verifica la redirezione a /customers
 
         // Verifica che Bartali sia ora presente in DB
-        Customer savedCustomer = customerRepository.findBySurnameIgnoreCase("Bartali").get(0);
+        Customer savedCustomer = customerRepository.findBySurname("Bartali").get(0);
         assert savedCustomer != null;
         assert savedCustomer.getName().equals("Gino");
         assert savedCustomer.getSurname().equals("Bartali");
@@ -80,7 +80,7 @@ public class CustomerControllerTests {
                 .andExpect(model().attributeHasFieldErrors("customer", "age"));  // Verifica l'errore sul campo "age"
 
         // Verifica che Fausto Coppi NON sia stato inserito in DB
-        assert customerRepository.findBySurnameIgnoreCase("Coppi").isEmpty();
+        assert customerRepository.findBySurname("Coppi").isEmpty();
         //  Provare a commentare la validation sul campo "age" e verificare che questo test fallisce
     }
 
@@ -90,7 +90,7 @@ public class CustomerControllerTests {
                 .andExpect(status().isOk())  // Verifica che lo stato sia OK (200)
                 .andExpect(view().name("customerList"))  // Verifica che la vista sia "customerList"
                 .andExpect(model().attributeExists("customers"))  // Verifica che il modello contenga "customers"
-                .andExpect(model().attribute("customers", customerRepository.findBySurnameIgnoreCase("Rossi")));  // Verifica che "customer" contenga il risultato della query
+                .andExpect(model().attribute("customers", customerRepository.findBySurname("Rossi")));  // Verifica che "customer" contenga il risultato della query
     }
 
 }

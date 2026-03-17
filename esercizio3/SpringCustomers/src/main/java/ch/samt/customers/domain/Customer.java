@@ -1,24 +1,18 @@
 package ch.samt.customers.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.SequenceGenerator;
-import jakarta.persistence.Id;
-
 import jakarta.validation.constraints.*;
-import org.hibernate.validator.constraints.CreditCardNumber;
-
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.hibernate.validator.constraints.CreditCardNumber;
+import org.springframework.data.annotation.Id;
 
+import java.text.DateFormat;
 
 @Data
-@Entity
+@AllArgsConstructor
 public class Customer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_seq")
-    @SequenceGenerator(name = "customer_seq", sequenceName = "customer_seq", allocationSize = 1)
     private Long id;
 
     @NotBlank

@@ -61,7 +61,7 @@ public class CustomerController {
     public String loadInsertPage(Model model, @PathVariable String surnameToFilter) {
         //List<Customer> filteredCustomers = customers.stream()
         //        .filter(customer -> customer.getSurname().equalsIgnoreCase(surnameToFilter)).toList();
-        List <Customer> filteredCustomers = customerRepository.findBySurnameIgnoreCase(surnameToFilter);
+        List <Customer> filteredCustomers = customerRepository.findBySurname(surnameToFilter);
         model.addAttribute("customers", filteredCustomers);
         return "customerList";
     }
@@ -70,16 +70,7 @@ public class CustomerController {
     public String findByCity(Model model,
                                  @RequestParam(value = "city", required = false) String cityName) {
 
-        List <Customer> filteredCustomers = customerRepository.findByCityIgnoreCase(cityName);
-        model.addAttribute("customers", filteredCustomers);
-        return "customerList";
-    }
-
-    @GetMapping("/customersbyageafter")
-    public String findByAgeAfter(Model model,
-                             @RequestParam(value = "age", required = false) Integer age) {
-
-        List <Customer> filteredCustomers = customerRepository.findByAgeAfter(age);
+        List <Customer> filteredCustomers = customerRepository.findByCity(cityName);
         model.addAttribute("customers", filteredCustomers);
         return "customerList";
     }
