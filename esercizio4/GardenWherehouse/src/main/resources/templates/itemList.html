@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item List</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Geist:wght@300;400;500&display=swap');
+
+    :root {
+      --bg:        #0d0d0f;
+      --surface:   #131317;
+      --surface2:  #1a1a20;
+      --border:    #2a2a35;
+      --accent:    #7c6dfa;
+      --accent2:   #a78bfa;
+      --text:      #e8e8f0;
+      --muted:     #6b6b80;
+      --radius:    12px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Geist', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    /* subtle grid texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+              linear-gradient(rgba(124,109,250,0.03) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(124,109,250,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--text);
+      align-self: flex-start;
+      max-width: 960px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 span {
+      color: var(--accent2);
+    }
+
+    .table-wrapper {
+      width: 100%;
+      max-width: 960px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 0 0 1px rgba(124,109,250,0.08), 0 20px 60px rgba(0,0,0,0.6);
+      position: relative;
+      z-index: 1;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+    }
+
+    thead {
+      background: var(--surface2);
+    }
+
+    thead th {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 14px 20px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background: var(--surface2);
+    }
+
+    tbody tr:hover td:first-child {
+      color: var(--accent2);
+    }
+
+    tbody td {
+      padding: 14px 20px;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    tbody td:first-child {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-family: 'Syne', monospace;
+      transition: color 0.15s;
+    }
+
+    /* accent left border on hover */
+    tbody tr:hover td:nth-child(2) {
+      padding-left: 17px;
+      border-left: 3px solid var(--accent);
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 1.5rem 1rem; }
+      thead th, tbody td { padding: 10px 12px; font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body>
+
+
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Code</th>
+    <th>Type</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Item Count</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr th:each="item : ${items}">
+    <td th:text="${item.id}"></td>
+    <td th:text="${item.code}"></td>
+    <td th:text="${item.type}"></td>
+    <td th:text="${item.name}"></td>
+    <td th:text="${item.price}"></td>
+    <td th:text="${item.itemCount}"></td>
+  </tr>
+
+
+  </tbody>
+</table>
+
+</body>
+</html>

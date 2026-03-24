@@ -2,6 +2,7 @@ package ch.samt.customers.controller;
 
 import ch.samt.customers.data.CustomerRepository;
 import ch.samt.customers.domain.Customer;
+import ch.samt.customers.service.CustomerService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,11 +21,13 @@ import java.util.List;
 @Controller
 public class CustomerController {
 
-    private final CustomerRepository customerRepository;
+    //private final CustomerRepository customerRepository;
+    private final CustomerService customerService;
 
     @Autowired
-    public CustomerController(CustomerRepository customerRepository) {
-        this.customerRepository = customerRepository;
+    public CustomerController(CustomerRepository customerRepository, CustomerService customerService) {
+        //this.customerRepository = customerRepository;
+        this.customerService = customerService;
     };
 
     /*
@@ -37,7 +40,8 @@ public class CustomerController {
     */
     @GetMapping
     public String loadCustomers(Model model) {
-        model.addAttribute("customers", customerRepository.findAll());
+        //model.addAttribute("customers", customerRepository.findAll());
+        model.addAttribute("customers", customerService.findAll());
         return "customerList";
     }
 
@@ -52,7 +56,12 @@ public class CustomerController {
             return "insertCustomer";
         }
         //customers.add(customer);
-        customerRepository.save(customer);
+        //customerRepository.save(customer);
+        Customer savedCustomer = customerService.save(customer);
+
+        if (savedCustomer == null) {
+            throw new RuntimeException("Customer not saved");
+        }
 
         return "redirect:/customers";
     }
@@ -61,7 +70,7 @@ public class CustomerController {
     public String loadInsertPage(Model model, @PathVariable String surnameToFilter) {
         //List<Customer> filteredCustomers = customers.stream()
         //        .filter(customer -> customer.getSurname().equalsIgnoreCase(surnameToFilter)).toList();
-        List <Customer> filteredCustomers = customerRepository.findBySurnameIgnoreCase(surnameToFilter);
+        List <Customer> filteredCustomers = customerService.findBySurnameIgnoreCase(surnameToFilter);
         model.addAttribute("customers", filteredCustomers);
         return "customerList";
     }
@@ -70,7 +79,7 @@ public class CustomerController {
     public String findByCity(Model model,
                                  @RequestParam(value = "city", required = false) String cityName) {
 
-        List <Customer> filteredCustomers = customerRepository.findByCityIgnoreCase(cityName);
+        List <Customer> filteredCustomers = customerService.findByCityIgnoreCase(cityName);
         model.addAttribute("customers", filteredCustomers);
         return "customerList";
     }
@@ -79,7 +88,7 @@ public class CustomerController {
     public String findByAgeAfter(Model model,
                              @RequestParam(value = "age", required = false) Integer age) {
 
-        List <Customer> filteredCustomers = customerRepository.findByAgeAfter(age);
+        List <Customer> filteredCustomers = customerService.findByAgeAfter(age);
         model.addAttribute("customers", filteredCustomers);
         return "customerList";
     }

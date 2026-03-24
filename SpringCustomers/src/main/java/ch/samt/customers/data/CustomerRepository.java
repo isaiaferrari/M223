@@ -13,5 +13,5 @@ public interface CustomerRepository
 
    List<Customer> findBySurnameIgnoreCase(String surname);
    List<Customer> findByCityIgnoreCase(String city);
-    List<Customer> findByAgeAfter(Integer age);
+   List<Customer> findByAgeAfter(Integer age);
 }
