@@ -1,0 +1,32 @@
+spring:
+  sql:
+    init:
+      schema-locations:
+        - classpath:/db/schema.sql
+
+---
+
+spring:
+  config:
+    activate:
+      on:profile: dev
+  sql:
+    init:
+      data:locations:
+        - classpath:/db/data-dev.sql
+server:
+  port: 1080
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+  sql:
+    init:
+      data-locations:
+        - classpath:/db/data-prod.sql
+
+server:
+  port: 2080
