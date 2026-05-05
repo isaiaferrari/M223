@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: Customer
+  datasource:
+    name: customer
+    generate-unique-name: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:h2:mem:customers
+    driver-class-name: org.h2.Driver
+  sql:
+    init:
+      data-locations:
+        - classpath:data-dev.sql
+
+
+server:
+  port: 8080
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    url: jdbc:h2:file:./data/customer
+    driver-class-name: org.h2.Driver
+  sql:
+    init:
+      data-locations:
+        - classpath:data-test.sql
+
+server:
+  port: 8090

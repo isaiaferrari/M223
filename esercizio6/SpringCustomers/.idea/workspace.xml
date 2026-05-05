@@ -5,12 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa6c5b09-5433-40ff-b446-08c8de830caf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Blog2/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Blog2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Blog2/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Blog2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../esercizio5/Blog2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../esercizio5/Blog2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../esercizio5/Blog2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../esercizio5/Blog2/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Customers/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Customers/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Customers/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Customers/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Customers/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Customers/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Customers/src/main/java/ch/samt/customers/CustomersApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Customers/src/main/java/ch/samt/customers/controller/CustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Customers/src/main/java/ch/samt/customers/model/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Customers/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Customers/src/main/resources/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Customers/src/main/resources/schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Customers/src/main/resources/templates/customerList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Customers/src/main/resources/templates/insertCustomer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Customers/src/test/java/ch/samt/customers/CustomersApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/main/java/ch/samt/customers/CustomersApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/main/java/ch/samt/customers/controller/CustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/main/java/ch/samt/customers/data/CustomerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/main/java/ch/samt/customers/domain/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/main/java/ch/samt/customers/service/CustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/main/resources/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/main/resources/schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/main/resources/templates/customerList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/main/resources/templates/insertCustomer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/test/java/ch/samt/customers/CustomerControllerTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/test/java/ch/samt/customers/CustomersApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../esercizio4/GardenWherehouse/src/test/java/ch/samt/gardenwherehouse/GardenWherehouseApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../esercizio4/GardenWherehouse/src/test/java/ch/samt/gardenwherehouse/GardenWherehouseApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../esercizio5/SpringCustomers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../esercizio5/SpringCustomers/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +53,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -48,6 +82,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;JUnit.CustomerControllerTests.executor&quot;: &quot;Run&quot;,
     &quot;Maven.Customers [compile].executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
@@ -56,10 +91,11 @@
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;Spring Boot.CustomersApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/25-26/223 (Java Spring)/M223/esercizio5/SpringCustomers&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/25-26/223 (Java Spring)/M223/esercizio6/SpringCustomers/src/main/resources&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -69,10 +105,8 @@
   }
 }</component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\25-26\223 (Java Spring)\M223\esercizio5\SpringCustomers\src\main\resources\db" />
-      <recent name="D:\25-26\223 (Java Spring)\M223\esercizio5\SpringCustomers\src\main\resources" />
-      <recent name="D:\25-26\223 (Java Spring)\M223\esercizio5\SpringCustomers\src\main\resources\templates\db" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\25-26\223 (Java Spring)\M223\esercizio6\SpringCustomers\src\main\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.CustomersApplication">
@@ -134,12 +168,18 @@
       <workItem from="1773128976958" duration="219000" />
       <workItem from="1773130666701" duration="7104000" />
       <workItem from="1773732438963" duration="7579000" />
-      <workItem from="1773740877274" duration="5000" />
-      <workItem from="1774339179035" duration="689000" />
-      <workItem from="1774942808492" duration="3049000" />
-      <workItem from="1774946636850" duration="39000" />
-      <workItem from="1776147817531" duration="254000" />
-      <workItem from="1777367910073" duration="628000" />
+      <workItem from="1773740867412" duration="2310000" />
+      <workItem from="1774337652557" duration="1488000" />
+      <workItem from="1774339845274" duration="5566000" />
+      <workItem from="1774938154950" duration="55000" />
+      <workItem from="1774946643804" duration="28000" />
+      <workItem from="1776094324432" duration="1779000" />
+      <workItem from="1776111015226" duration="85000" />
+      <workItem from="1776112085715" duration="814000" />
+      <workItem from="1776154098459" duration="30000" />
+      <workItem from="1777357668095" duration="3084000" />
+      <workItem from="1777361199707" duration="7205000" />
+      <workItem from="1777962607471" duration="583000" />
     </task>
     <servers />
   </component>

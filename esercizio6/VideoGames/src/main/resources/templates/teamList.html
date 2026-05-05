@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teams</title>
+</head>
+<body>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Headquarters</th>
+        <th>Main Sponsor</th>
+        <th>Annual Budget</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="team : ${teams}">
+        <td th:text="${team.id}"></td>
+        <td th:text="${team.name}"></td>
+        <td th:text="${team.headquarters}"></td>
+        <td th:text="${team.mainSponsor}"></td>
+        <td th:text="${team.annualBudget}"></td>
+    </tr>
+
+
+    </tbody>
+</table>
+
+</body>
+</html>

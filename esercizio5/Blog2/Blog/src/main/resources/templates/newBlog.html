@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Nuovo Post</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#f4f6f9;
+    }
+
+    .navbar{
+      background:#2c3e50;
+      padding:15px 0;
+    }
+
+    .nav-container{
+      width:90%;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      color:white;
+      font-size:22px;
+      font-weight:bold;
+    }
+
+    .nav-links{
+      list-style:none;
+      display:flex;
+      gap:20px;
+    }
+
+    .nav-links a{
+      color:white;
+      text-decoration:none;
+    }
+
+    .nav-links a:hover{
+      color:#1abc9c;
+    }
+
+    .container{
+      width:500px;
+      margin:40px auto;
+    }
+
+    h1{
+      text-align:center;
+      margin-bottom:25px;
+    }
+
+    form{
+      background:white;
+      padding:25px;
+      border-radius:8px;
+      box-shadow:0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    form div{
+      margin-bottom:15px;
+    }
+
+    label{
+      display:block;
+      margin-bottom:5px;
+      font-weight:bold;
+    }
+
+    input, textarea{
+      width:100%;
+      padding:8px;
+      border-radius:4px;
+      border:1px solid #ccc;
+    }
+
+    textarea{
+      height:150px;
+      resize:vertical;
+    }
+
+    button{
+      width:100%;
+      padding:10px;
+      background:#1abc9c;
+      border:none;
+      color:white;
+      border-radius:5px;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:#16a085;
+    }
+
+    .validationError{
+      color:red;
+      font-size:12px;
+    }
+  </style>
+</head>
+
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">BlogApp</div>
+    <ul class="nav-links">
+      <li><a th:href="@{/blog}">Home</a></li>
+      <li><a th:href="@{/blog/new}">Nuovo Post</a></li>
+      <li><a th:href="@{/blog/best}">I Migliori</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+  <h1>Nuovo Post</h1>
+
+  <form method="POST" th:object="${blog}">
+
+    <div>
+      <label for="title">Titolo</label>
+      <input type="text" id="title" th:field="*{title}">
+      <span class="validationError" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+    </div>
+
+    <div>
+      <label for="publishedDate">Data di Pubblicazione</label>
+      <input type="date" id="publishedDate" th:field="*{publishedDate}">
+      <span class="validationError" th:if="${#fields.hasErrors('publishedDate')}" th:errors="*{publishedDate}"></span>
+    </div>
+
+    <div>
+      <label for="category">Categoria</label>
+      <input type="text" id="category" th:field="*{category}">
+      <span class="validationError" th:if="${#fields.hasErrors('category')}" th:errors="*{category}"></span>
+    </div>
+
+    <div>
+      <label for="author">Autore</label>
+      <input type="text" id="author" th:field="*{author}">
+      <span class="validationError" th:if="${#fields.hasErrors('author')}" th:errors="*{author}"></span>
+    </div>
+
+    <div>
+      <label for="likes">Like iniziali</label>
+      <input type="number" id="likes" th:field="*{likes}" value="0" min="0">
+      <span class="validationError" th:if="${#fields.hasErrors('likes')}" th:errors="*{likes}"></span>
+    </div>
+
+    <div>
+      <label for="content">Contenuto</label>
+      <textarea id="content" th:field="*{content}"></textarea>
+      <span class="validationError" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span>
+    </div>
+
+    <button type="submit">Pubblica</button>
+
+  </form>
+
+</div>
+</body>
+</html>

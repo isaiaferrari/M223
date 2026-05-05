@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Post</title>
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#f4f6f9;
+    }
+
+    .navbar{
+      background:#2c3e50;
+      padding:15px 0;
+    }
+
+    .nav-container{
+      width:90%;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      color:white;
+      font-size:22px;
+      font-weight:bold;
+    }
+
+    .nav-links{
+      list-style:none;
+      display:flex;
+      gap:20px;
+    }
+
+    .nav-links a{
+      color:white;
+      text-decoration:none;
+    }
+
+    .nav-links a:hover{
+      color:#1abc9c;
+    }
+
+    .container{
+      width:60%;
+      margin:40px auto;
+      background:white;
+      padding:30px;
+      border-radius:8px;
+      box-shadow:0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    h1{
+      margin-bottom:15px;
+    }
+
+    .meta{
+      color:#888;
+      font-size:14px;
+      margin-bottom:20px;
+    }
+
+    .meta span{
+      margin-right:15px;
+    }
+
+    .content{
+      line-height:1.7;
+      color:#333;
+      white-space:pre-wrap;
+    }
+
+    .likes{
+      margin-top:20px;
+      font-weight:bold;
+      color:#1abc9c;
+    }
+
+    .btn-back{
+      display:inline-block;
+      margin-top:25px;
+      background:#2c3e50;
+      color:white;
+      padding:8px 16px;
+      border-radius:4px;
+      text-decoration:none;
+    }
+
+    .btn-back:hover{
+      background:#1a252f;
+    }
+  </style>
+</head>
+
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">BlogApp</div>
+    <ul class="nav-links">
+      <li><a th:href="@{/blog}">Home</a></li>
+      <li><a th:href="@{/blog/new}">Nuovo Post</a></li>
+      <li><a th:href="@{/blog/best}">I Migliori</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+  <h1 th:text="${post.title}"></h1>
+
+  <div class="meta">
+    <span>📅 <span th:text="${post.publishedDate}"></span></span>
+    <span>📁 <span th:text="${post.category}"></span></span>
+    <span>✍️ <span th:text="${post.author}"></span></span>
+  </div>
+
+  <div class="content" th:text="${post.content}"></div>
+
+  <div class="likes">👍 <span th:text="${post.likes}"></span> like</div>
+
+  <a class="btn-back" th:href="@{/blog}">← Torna alla lista</a>
+
+</div>
+</body>
+</html>

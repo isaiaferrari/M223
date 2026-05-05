@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>New Player</title>
+</head>
+<body>
+<div class="container">
+  <h1>Insert new Player</h1>
+
+  <form method="POST" th:object="${player}">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" th:field="${player.name}"/>
+      <span class="validationError" th:if="${#fields.hasErrors('name')}"
+            th:errors="${player.name}">Name Error</span>
+
+    </div>
+
+    <div>
+      <label for="surname">Surname:</label>
+      <input type="text" id="surname" th:field="${player.surname}"/>
+      <span class="validationError" th:if="${#fields.hasErrors('surname')}"
+            th:errors="${player.surname}">Surname Error</span>
+    </div>
+
+    <div>
+      <label for="nationality">Nationality:</label>
+      <input type="text" id="nationality" th:field="${player.nationality}"/>
+      <span class="validationError" th:if="${#fields.hasErrors('nationality')}"
+            th:errors="${player.nationality}">Nationality Error</span>
+    </div>
+
+    <div>
+      <label for="contractExpirationDate">Contract Expiration Date:</label>
+      <input type="text" id="contractExpirationDate" th:field="${player.contractExpirationDate}"/>
+      <span class="validationError" th:if="${#fields.hasErrors('contractExpirationDate')}"
+            th:errors="${player.contractExpirationDate}">Contract Expiration Date Error</span>
+    </div>
+
+    <div>
+      <button type="submit">Save</button>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
+

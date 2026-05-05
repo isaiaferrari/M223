@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: Blog
+  datasource:
+    generate-unique-name: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+  sql:
+    init:
+      schema-locations:
+        - classpath:schema.sql
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:h2:mem:blogdb-dev
+    driver-class-name: org.h2.Driver
+  sql:
+    init:
+      data-locations:
+        - classpath:data-dev.sql
+
+
+server:
+  port: 8080
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    url: jdbc:h2:file:./data/blogdb-test
+    driver-class-name: org.h2.Driver
+  sql:
+    init:
+      data-locations:
+        - classpath:data-test.sql
+
+server:
+  port: 8090

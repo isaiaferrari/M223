@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#f4f6f9;
+    }
+
+    .navbar{
+      background:#2c3e50;
+      padding:15px 0;
+    }
+
+    .nav-container{
+      width:90%;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      color:white;
+      font-size:22px;
+      font-weight:bold;
+    }
+
+    .nav-links{
+      list-style:none;
+      display:flex;
+      gap:20px;
+    }
+
+    .nav-links a{
+      color:white;
+      text-decoration:none;
+    }
+
+    .nav-links a:hover{
+      color:#1abc9c;
+    }
+
+    .container{
+      width:90%;
+      margin:40px auto;
+    }
+
+    h1{
+      text-align:center;
+      margin-bottom:25px;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      background:white;
+      box-shadow:0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    thead{
+      background:#2c3e50;
+      color:white;
+    }
+
+    th, td{
+      padding:12px;
+      text-align:center;
+    }
+
+    tr:nth-child(even){
+      background:#f2f2f2;
+    }
+
+    tr:hover{
+      background:#e8f8f5;
+    }
+
+    .btn-like{
+      background:#1abc9c;
+      color:white;
+      border:none;
+      padding:6px 12px;
+      border-radius:4px;
+      cursor:pointer;
+      text-decoration:none;
+      font-size:14px;
+    }
+
+    .btn-like:hover{
+      background:#16a085;
+    }
+
+    .btn-view{
+      background:#2980b9;
+      color:white;
+      border:none;
+      padding:6px 12px;
+      border-radius:4px;
+      cursor:pointer;
+      text-decoration:none;
+      font-size:14px;
+    }
+
+    .btn-view:hover{
+      background:#1a6a9a;
+    }
+  </style>
+</head>
+
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">BlogApp</div>
+    <ul class="nav-links">
+      <li><a th:href="@{/blog}">Home</a></li>
+      <li><a th:href="@{/blog/new}">Nuovo Post</a></li>
+      <li><a th:href="@{/blog/best}">I Migliori</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+  <h1>Elenco Post</h1>
+
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Titolo</th>
+      <th>Data</th>
+      <th>Categoria</th>
+      <th>Autore</th>
+      <th>Like</th>
+      <th>Vota</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="post : ${posts}">
+      <td th:text="${post.id}"></td>
+      <td th:text="${post.title}"></td>
+      <td th:text="${post.publishedDate}"></td>
+      <td th:text="${post.category}"></td>
+
+      <td><a th:text="${post.author}"></a></td>
+
+      <td th:text="${post.likes}"></td>
+
+      <td><a class="btn-like" th:href="@{/blog/like(postid=${post.id})}">👍 Like</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

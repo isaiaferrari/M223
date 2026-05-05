@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GameProfiles</title>
+</head>
+<body>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Level</th>
+        <th>Win Rate</th>
+        <th>kda Ratio</th>
+        <th>Tier</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="gameProfile : ${gameProfiles}">
+        <td th:text="${gameProfile.id}"></td>
+        <td th:text="${gameProfile.level}"></td>
+        <td th:text="${gameProfile.winRate}"></td>
+        <td th:text="${gameProfile.kdaRatio}"></td>
+        <td th:text="${gameProfile.tier}"></td>
+
+    </tr>
+
+
+    </tbody>
+</table>
+
+</body>
+</html>

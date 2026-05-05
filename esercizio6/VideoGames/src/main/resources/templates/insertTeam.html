@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>New Team</title>
+</head>
+<body>
+<div class="container">
+  <h1>Insert new Team</h1>
+
+  <form method="POST" th:object="${team}">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" th:field="${team.name}"/>
+      <span class="validationError" th:if="${#fields.hasErrors('name')}"
+            th:errors="${team.name}">Name Error</span>
+
+    </div>
+    <div>
+      <label for="headquarters">Headquarters:</label>
+      <input type="text" id="headquarters" th:field="${team.headquarters}"/>
+      <span class="validationError" th:if="${#fields.hasErrors('headquarters')}"
+            th:errors="${team.headquarters}">Headquarters Error</span>
+    </div>
+    <div>
+      <label for="mainSponsor">Main Sponsor:</label>
+      <input type="text" id="mainSponsor" th:field="${team.mainSponsor}"/>
+      <span class="validationError" th:if="${#fields.hasErrors('mainSponsor')}"
+            th:errors="${team.mainSponsor}">Main Sponsor Error</span>
+    </div>
+    <div>
+      <label for="annualBudget">Annual Budget:</label>
+      <input type="number" id="annualBudget" th:field="${team.annualBudget}"/>
+      <span class="validationError" th:if="${#fields.hasErrors('annualBudget')}"
+            th:errors="${team.annualBudget}">Annual Budget Error</span>
+    </div>
+
+    <div>
+      <button type="submit">Save</button>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
+
