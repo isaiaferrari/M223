@@ -26,4 +26,10 @@ public class TeamService {
     }
 
     public Team findById(long id) {return teamRepository.findById(id);}
+
+    public Team deleteById(long id) {
+        Team t = teamRepository.findById(id);
+        t.setDeleted(true);
+        return t;
+    }
 }

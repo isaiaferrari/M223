@@ -28,6 +28,8 @@ public class Team {
     @NotNull
     private double annualBudget;
 
+    private Boolean deleted;
+
     @ToString.Exclude
     @OneToMany
     private List<Player> players;

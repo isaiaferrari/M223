@@ -127,7 +127,7 @@ public class VideoGameController {
         return "insertPlayer";
     }
 
-    @PostMapping("/player/edit/{playerId}")
+    @PostMapping("/players/edit/{playerId}")
     public String updatePlayer(@Valid Player player, Errors errors,
                              @PathVariable Long playerId) {
         player.setId(playerId);
@@ -144,5 +144,36 @@ public class VideoGameController {
 
         return "redirect:/players";
     }
+
+    /*
+    @PostMapping("/teams/delete/{teamId}")
+    public String deleteTeam(Errors errors,
+                               @PathVariable Long teamId) {
+        Player deletePlayer = playerService.save(player);
+
+        if (savedPlayer == null) {
+            throw new RuntimeException("Player not saved");
+        }
+
+        return "redirect:/players";
+    }
+    @PostMapping("/players/delete/{playerId}")
+    public String updatePlayer(@Valid Player player, Errors errors,
+                               @PathVariable Long playerId) {
+        player.setId(playerId);
+
+        if (errors.hasErrors()) {
+            return "insertPlayer";
+        }
+
+        Player savedPlayer = playerService.save(player);
+
+        if (savedPlayer == null) {
+            throw new RuntimeException("Player not saved");
+        }
+
+        return "redirect:/players";
+    }
+    */
 
 }

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meal Groups</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Background */
+    body {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      padding: 40px;
+    }
+
+    /* Container */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    /* Header */
+    thead {
+      background: #667eea;
+      color: white;
+    }
+
+    thead th {
+      text-align: left;
+      padding: 15px;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Righe */
+    tbody tr {
+      transition: 0.2s;
+    }
+
+    /* Celle */
+    td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
+      color: #333;
+    }
+
+    /* Zebra stripes */
+    tbody tr:nth-child(even) {
+      background: #f8f9ff;
+    }
+
+    /* Hover effetto */
+    tbody tr:hover {
+      background: #eef1ff;
+      transform: scale(1.01);
+    }
+
+    /* Ultima riga senza bordo */
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div th:each="mealGroup: ${mealGroups}">
+  <div class="mytable-header" th:text="'Ospiti del gruppo ' + ${mealGroup.name} + ':'"></div>
+  <table>
+    <thead>
+      <th th:text="Nome"></th>
+      <th th:text="Cognome"></th>
+    </thead>
+    <tbody>
+    <tr th:each="customer: ${mealGroup.customers}">
+      <td th:text="${customer.name}"></td>
+      <td th:text="${customer.surname}"></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <form th:action="@{/customers/addcustomer-to-mealgroup}" method="post">
+    <label for="customerId">Customer:</label>
+    <select name="customerId" id="customerId">
+      <option th:each="customer: ${customers}"
+              th:value="${customer.id}"
+              th:text="${customer.name} + ' ' + ${customer.surname}">
+      </option>
+    </select>
+
+    <label for="mealGroupId">Meal group:</label>
+    <select name="mealGroupId" id="mealGroupId">
+      <option th:each="mealGroup: ${mealGroups}"
+              th:value="${mealGroup.id}"
+              th:text="${mealGroup.name}">
+      </option>
+    </select>
+
+    <button type="submit">Aggiungi</button>
+  </form>
+
+
+</div>
+
+</body>
+</html>

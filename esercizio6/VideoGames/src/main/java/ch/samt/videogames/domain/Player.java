@@ -34,6 +34,8 @@ public class Player {
     @Valid
     private GameProfile gameProfile;
 
+    private Boolean deleted;
+
     @ManyToOne
     @JoinColumn(name = "team_id", nullable = false)
     private Team team;

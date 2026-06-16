@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movies</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Background */
+    body {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      padding: 40px;
+    }
+
+    /* Container */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    /* Header */
+    thead {
+      background: #667eea;
+      color: white;
+    }
+
+    thead th {
+      text-align: left;
+      padding: 15px;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Righe */
+    tbody tr {
+      transition: 0.2s;
+    }
+
+    /* Celle */
+    td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
+      color: #333;
+    }
+
+    /* Zebra stripes */
+    tbody tr:nth-child(even) {
+      background: #f8f9ff;
+    }
+
+    /* Hover effetto */
+    tbody tr:hover {
+      background: #eef1ff;
+      transform: scale(1.01);
+    }
+
+    /* Ultima riga senza bordo */
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Release Year</th>
+    <th>Director</th>
+    <th>Actors</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr th:each="movie : ${movies}">
+    <td th:text="${movie.id}"></td>
+    <td th:text="${movie.title}"></td>
+    <td th:text="${movie.release_year}"></td>
+    <td th:text="${movie.director.name + ' ' + movie.director.surname}"></td>
+    <td>
+        <span th:each="actor, stat : ${movie.actors}">
+        <span th:text="${actor.name + ' ' + actor.surname}"></span>
+        <span th:if="${!stat.last}">, </span>
+    </span>
+    </td>
+  </tr>
+
+  </tbody>
+</table>
+
+</body>
+</html>

@@ -27,5 +27,11 @@ public class PlayerService {
 
     public Player findById(long id) {return playerRepository.findById(id);}
 
+    public Player deleteById(long id) {
+        Player p = playerRepository.findById(id);
+        p.setDeleted(true);
+        return p;
+    }
+
 
 }

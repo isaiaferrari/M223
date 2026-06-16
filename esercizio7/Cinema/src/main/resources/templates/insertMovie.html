@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>New Movie</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* Background */
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container unico (titolo + form) */
+        .container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            width: 460px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Titolo */
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        /* Form layout */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Riga input */
+        form div {
+            margin-bottom: 15px;
+        }
+
+        /* Label sopra input */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* Input full width */
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            transition: 0.3s;
+        }
+
+        /* Focus */
+        input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 6px rgba(102, 126, 234, 0.5);
+            outline: none;
+        }
+
+        /* Bottone */
+        button {
+            margin-top: 10px;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        /* Hover */
+        button:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+        }
+
+        /* Errori */
+        .validationError {
+            font-size: 12px;
+            color: #e53e3e;
+            margin-top: 4px;
+        }
+        /* Select */
+        select {
+            width: 100%;
+            padding: 10px 36px 10px 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            color: #333;
+            font-size: 14px;
+            font-family: 'Segoe UI', sans-serif;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            cursor: pointer;
+            transition: 0.3s;
+            outline: none;
+        }
+
+        select:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 6px rgba(102, 126, 234, 0.5);
+        }
+
+        select:hover {
+            border-color: #aaa;
+        }
+
+        /* Checkbox container */
+        .actor-checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            border: 1px solid #e2e2e2;
+            margin-bottom: 6px;
+            transition: background 0.15s;
+            cursor: pointer;
+        }
+
+        .actor-checkbox-container:hover {
+            background: #f5f5f5;
+        }
+
+        .actor-checkbox-container label {
+            margin: 0;
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Checkbox custom */
+        input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            min-width: 18px;
+            border-radius: 5px;
+            border: 1.5px solid #ccc;
+            background: #fff;
+            cursor: pointer;
+            transition: 0.15s;
+            display: grid;
+            place-items: center;
+            outline: none;
+        }
+
+        input[type="checkbox"]:checked {
+            background: #667eea;
+            border-color: #667eea;
+        }
+
+        input[type="checkbox"]:checked::after {
+            content: '';
+            width: 5px;
+            height: 9px;
+            border: 2px solid white;
+            border-top: none;
+            border-left: none;
+            transform: rotate(45deg) translateY(-1px);
+            display: block;
+        }
+
+        input[type="checkbox"]:focus {
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Insert a new Movie</h1>
+
+    <form method="POST" th:object="${movie}">
+        <div>
+            <label for="title">Title:</label>
+            <input type="text" id="title" th:field="${movie.title}"/>
+            <span class="validationError" th:if="${#fields.hasErrors('title')}"
+                  th:errors="${movie.title}">Title Error</span>
+
+        </div>
+
+        <div>
+            <label for="release_year">Release Year:</label>
+            <input type="number" id="release_year" th:field="${movie.release_year}"/>
+            <span class="validationError" th:if="${#fields.hasErrors('release_year')}"
+                  th:errors="${movie.release_year}">Name Error</span>
+        </div>
+
+        <div>
+            <label for="director">Director:</label>
+            <select th:field="${movie.director}" id="director">
+                <option value="">Regista</option>
+                <option th:each="director : ${directors}"
+                        th:value="${director.id}"
+                        th:text="${director.name + ' ' + director.surname}"></option>
+            </select>
+        </div>
+
+        <div>
+            <label>Actors:</label>
+            <div th:each="actor : ${actors}" class="actor-checkbox-container">
+                <input type="checkbox" th:field="${movie.actors}" th:value="${actor.id}" th:id="${'actor' + actor.id}">
+                <label  th:for="${'actor' + actor.id}" th:text="${actor.name + ' ' + actor.surname}"></label>
+            </div>
+        </div>
+
+        <div>
+            <button type="submit">Save</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
+

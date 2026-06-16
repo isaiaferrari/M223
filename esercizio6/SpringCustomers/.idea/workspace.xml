@@ -5,45 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa6c5b09-5433-40ff-b446-08c8de830caf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../esercizio5/Blog2/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../esercizio5/Blog2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../esercizio5/Blog2/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../esercizio5/Blog2/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Customers/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Customers/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Customers/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Customers/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Customers/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Customers/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Customers/src/main/java/ch/samt/customers/CustomersApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Customers/src/main/java/ch/samt/customers/controller/CustomerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Customers/src/main/java/ch/samt/customers/model/Customer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Customers/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Customers/src/main/resources/data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Customers/src/main/resources/schema.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Customers/src/main/resources/templates/customerList.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Customers/src/main/resources/templates/insertCustomer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Customers/src/test/java/ch/samt/customers/CustomersApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/main/java/ch/samt/customers/CustomersApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/main/java/ch/samt/customers/controller/CustomerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/main/java/ch/samt/customers/data/CustomerRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/main/java/ch/samt/customers/domain/Customer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/main/java/ch/samt/customers/service/CustomerService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/main/resources/data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/main/resources/schema.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/main/resources/templates/customerList.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/main/resources/templates/insertCustomer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/test/java/ch/samt/customers/CustomerControllerTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SpringCustomers/src/test/java/ch/samt/customers/CustomersApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../esercizio4/GardenWherehouse/src/test/java/ch/samt/gardenwherehouse/GardenWherehouseApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../esercizio4/GardenWherehouse/src/test/java/ch/samt/gardenwherehouse/GardenWherehouseApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../esercizio5/SpringCustomers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../esercizio5/SpringCustomers/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VideoGames/src/main/resources/templates/insertPlayer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VideoGames/src/main/resources/templates/insertPlayer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +58,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;Spring Boot.CustomersApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/25-26/223 (Java Spring)/M223/esercizio6/SpringCustomers/src/main/resources&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/25-26/223 (Java Spring)/M223/esercizio6/SpringCustomers&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -180,6 +143,8 @@
       <workItem from="1777357668095" duration="3084000" />
       <workItem from="1777361199707" duration="7205000" />
       <workItem from="1777962607471" duration="583000" />
+      <workItem from="1778567025085" duration="4000" />
+      <workItem from="1778567082030" duration="553000" />
     </task>
     <servers />
   </component>

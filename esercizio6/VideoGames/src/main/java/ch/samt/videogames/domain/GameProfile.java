@@ -26,4 +26,6 @@ public class GameProfile {
     @NotBlank
     private String tier;
 
+    private Boolean deleted;
+
 }

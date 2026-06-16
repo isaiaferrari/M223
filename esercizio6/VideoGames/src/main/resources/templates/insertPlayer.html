@@ -33,9 +33,16 @@
 
     <div>
       <label for="contractExpirationDate">Contract Expiration Date:</label>
-      <input type="text" id="contractExpirationDate" th:field="${player.contractExpirationDate}"/>
+      <input type="date" id="contractExpirationDate" th:field="${player.contractExpirationDate}"/>
       <span class="validationError" th:if="${#fields.hasErrors('contractExpirationDate')}"
             th:errors="${player.contractExpirationDate}">Contract Expiration Date Error</span>
+    </div>
+
+    <div>
+      <label for="teamId">Team ID:</label>
+      <input type="text" id="teamId" th:field="${player.team.id}"/>
+      <span class="validationError" th:if="${#fields.hasErrors('team.id')}"
+            th:errors="${player.team.id}">Team ID Error</span>
     </div>
 
     <div>

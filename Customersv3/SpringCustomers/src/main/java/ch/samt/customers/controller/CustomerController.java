@@ -2,7 +2,9 @@ package ch.samt.customers.controller;
 
 import ch.samt.customers.data.CustomerRepository;
 import ch.samt.customers.domain.Customer;
+import ch.samt.customers.domain.MealGroup;
 import ch.samt.customers.service.CustomerService;
+import ch.samt.customers.service.MealGroupService;
 import ch.samt.customers.service.ReservationService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +21,13 @@ public class CustomerController {
 
     private final CustomerService customerService;
     private final ReservationService reservationService;
+    private final MealGroupService mealGroupService;
 
     @Autowired
-    public CustomerController(CustomerService customerService, ReservationService reservationService) {
+    public CustomerController(CustomerService customerService, ReservationService reservationService, MealGroupService mealGroupService) {
         this.customerService = customerService;
         this.reservationService = reservationService;
+        this.mealGroupService = mealGroupService;
     };
 
 
@@ -99,4 +103,27 @@ public class CustomerController {
         model.addAttribute("customers", filteredCustomers);
         return "customerList";
     }
+
+    @GetMapping("/mealgroups")
+    public String mealGroups(Model model) {
+        model.addAttribute("mealGroups", mealGroupService.findAll());
+        model.addAttribute("customers", customerService.findAll());
+
+        return "mealGroupList";
+    }
+
+
+    @PostMapping("/addcustomer-to-mealgroup")
+    public String addCustomerToMealGroup(@RequestParam Long mealGroupId,
+                                         @RequestParam Long customerId) {
+        MealGroup mealGroup = mealGroupService.findById(mealGroupId);
+        Customer customer = customerService.findById(customerId);
+
+        if (!customer.getMealGroups().contains(mealGroup)) {
+            customer.getMealGroups().add(mealGroup);
+            customerService.save(customer);
+        }
+        return "redirect:/customers/mealgroups";
+    }
+
 }
